@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body{
+				background-color: white
+			}
+			.test {
+				width: 300px;
+				height: 200px;
+				margin: 50px auto;
+			}
+			.test button{
+				width: 150px;
+				height: 50px;
+				color: white;
+				border-radius: 10px;
+				font-size: 18px;
+				/* outline: 4px solid #fff; */
+				position: relative;
+				border: none;
+				background-color: rgba(255, 0, 0, 0);
+				overflow: hidden;
+			}
+			.test button:hover{
+				color: yellow;
+			}
+			.test button::before{
+				content: '';
+				position: absolute;
+				background:#f40;
+				width: 200%;
+				height: 200%;
+				z-index: -2;
+				left: 50%;
+				top: 50%;
+				transform-origin: 0 0;
+				animation: rotate 3s infinite linear;
+			}
+			.test button::after{
+				content: '';
+				position: absolute;
+				background:green;
+				width: calc(100% - 4px);
+				height: calc(100% - 4px);
+				left: 2px;
+				top: 2px;
+				border-radius: 10px;
+				z-index: -1;
+			}
+			
+			@keyframes rotate{
+				to{
+					transform: rotate(1turn);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="test">
+			<button>边框按钮</button>
+		</div>
+	</body>
+	
+</html>
